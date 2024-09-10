@@ -7,7 +7,6 @@ const ClientResetPassword = dynamic(() => import("./ClientResetPassword"), {
 export default function ResetPasswordPage() {
   return (
     <div>
-      <h1>Reset Password</h1>
       <ClientResetPassword />
     </div>
   );
