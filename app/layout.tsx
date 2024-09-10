@@ -1,15 +1,17 @@
 import { ThemeProvider } from "next-themes";
-import { type ThemeProviderProps } from "next-themes/dist/types";
 import "./globals.css";
 
-export default async function RootLayout({
-  children,
-  ...props
-}: ThemeProviderProps) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider {...props}>{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
